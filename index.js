@@ -52,13 +52,18 @@ Write a program whose major task is to calculate an individual’s Net Salary by
  Calculate the payee (i.e. Tax), NHIFDeductions, NSSFDeductions, gross salary, and net salary. */
 
 //Function calculates P.A.Y.E depending on the tax bracket
-function payeCalculator(salary) {
+function payeCalculator() {
+  let salary = parseFloat(prompt("Enter your gross salary"));
   if (salary <= 24000) {
-    return salary - salary * 0.01;
+    console.log(salary - salary * 0.01);
   } else if (salary >= 24001 && salary === 32333) {
-    return salary - salary * 0.25;
+    console.log(salary - salary * 0.25);
   } else {
     salary > 32333;
-    return salary - salary * 0.3;
+    console.log(salary - salary * 0.3);
   }
+  let deductions = parseFloat(prompt("Enter your monthly deductions"));
+  const netPay = salary - deductions;
+  return prompt(`Your  monthly salary amounts to ${netPay}`);
 }
+payeCalculator();
